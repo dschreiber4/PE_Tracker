@@ -1,2 +1,2 @@
 # PE_Tracker
-This shows our integratio with Pivotal Tracker works.
+This shows our integration with Pivotal Tracker works.
