@@ -25,7 +25,7 @@ express()
 		}
 		catch (err) {
 			console.error(err);
-			res.send("Error ", + err);
+			res.send("Error " + err);
 		}
 	})
 	.get('db-info', async(req, res) => {
