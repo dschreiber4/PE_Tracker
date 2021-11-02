@@ -21,7 +21,7 @@ express()
 			const client = await pool.connect();
 		
 			client.release();
-			res.send("Works");
+			res.status(status).send("Works");
 		}
 		catch (err) {
 			console.error(err);
