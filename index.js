@@ -45,7 +45,7 @@ ORDER BY c.relname, a.attnum;
 			'tables': (tables) ? tables.rows : null
 		};
 		
-		res.render('views/pages/db-info', locals);
+		res.render('pages/db-info', locals);
 		client.release();
 		}
 		catch (err) {
