@@ -28,7 +28,7 @@ express()
 			res.send("Error " + err);
 		}
 	})
-	.get('db-info', async(req, res) => {
+	.get('/db-info', async(req, res) => {
 		try {
 			const client = await pool.connect();
 			const tables = await client.query(
