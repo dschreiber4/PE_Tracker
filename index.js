@@ -31,8 +31,8 @@ express()
 	.get('db-info', async(req, res) => {
 		try {
 			const client = await pool.connect();
-			const result = await client.query(
-`SELECT c.relname AS tablle, a.attname AS column, t.typname AS type
+			const tables = await client.query(
+`SELECT c.relname AS table, a.attname AS column, t.typname AS type
 FROM pg_catalog.pg_class AS catch
 LEFT JOIN pg_attribute AS a 
 ON c.oid = a.attrelid AND a.attnum > 0
