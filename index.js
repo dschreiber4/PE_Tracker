@@ -48,8 +48,11 @@ ON a.atttypid = t.oid
 WHERE c.relname IN ('users', 'observations', 'students', 'schools', 'tasks')
 ORDER BY c.relname, a.attnum;			
 `);
+
+		const  obs = await client.query(`SELECT * FROM observations`);
 		const locals = {
-			'tables': (tables) ? tables.rows : null
+			'tables': (tables) ? tables.rows : null,
+			'obs': (obs) ? obs.rows : null
 		};
 		
 		res.render('pages/db-info', locals);
@@ -58,6 +61,34 @@ ORDER BY c.relname, a.attnum;
 		catch (err) {
 			console.error(err);
 			res.send("Error " + err);
+		}
+	})
+	.post('/log', async(req, res) => {
+		try {
+			const client = await pool.connect();
+			const usersID = req.body.users_id;
+			const studentsID = req.body.students_id;
+			const taskID = req.body.tasks_id;
+			const duration = req.body.duration;
+
+			const sqlInsert = await client.query(
+				`INSERT INTO observations (users_id, students_id, tasks_id, duration)
+VALUES (${usersID}, ${studentsID}, ${taskID}, ${duration})
+RETURNING id as new_id;`);
+		console.log('Tracking task ${tasksID}');
+
+		const result = {
+			'response': (sqlInsert) ? (sqlInsert.rows[0]) : null
+		};
+		res.set({
+			'Content-Type': 'application.json'
+		});
+		res.json({ requestBody: result });
+		client.release();
+		}
+		catch (err) {
+			console.error(err);
+			res.send("Error: " + err);
 		}
 	})
 	.listen(PORT, () => console.log(`Listening on ${ PORT }`));
