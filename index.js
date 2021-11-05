@@ -21,10 +21,10 @@ express()
 			const client = await pool.connect();
 
 			const tasks = await client.query(
-		`SELECT * FROM tasks ORDER BY is ASC`);
+		`SELECT * FROM tasks ORDER BY id ASC`);
 
 			const locals = {
-				'tasks' : (tasks) ? tasks.rows : null
+				'tasks': (tasks) ? tasks.rows : null
 			};
 			res.render('pages/index', locals);
 			client.release();
