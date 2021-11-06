@@ -15,6 +15,7 @@
     <script>
     let currentTaskId = null;
     const logTask = async function(id) {
+        async: true;
         const response = await fetch('/log',  {
             method: 'POST',
             headers: {
