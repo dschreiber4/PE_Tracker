@@ -55,7 +55,7 @@ ORDER BY c.relname, a.attnum;
 			'tables': (tables) ? tables.rows : null,
 			'obs': (obs) ? obs.rows : null
 		};
-		
+		//console.log(obs.rows[0].duration.minutes);
 		res.render('pages/db-info', locals);
 		client.release();
 		}
@@ -71,6 +71,8 @@ ORDER BY c.relname, a.attnum;
 			const studentsID = req.body.students_id;
 			const taskID = req.body.tasks_id;
 			const duration = req.body.duration;
+
+
 
 			const sqlInsert = await client.query(
 				`INSERT INTO observations (users_id, students_id, tasks_id, duration)
