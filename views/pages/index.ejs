@@ -11,9 +11,10 @@
         <button id='<%= r.id %>'
             onclick='javascript:logTask(<%= r.id %>);'><%= r.name %>
           <form>
+            <script>
               <output id='<%= r.id %>'>
-                  <script>
-                  var x = document.getElementById(<%= r.duration.minutes %>:<%= r.duration.seconds || "00" %>).form.id;%></output>
+                  
+                  var x = document.getElementById('duration').form.id;</output>
                 </script>
           </form>  
         </button>
