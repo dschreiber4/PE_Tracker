@@ -10,13 +10,12 @@
     <% tasks.forEach(function(r) {%>
         <button id='<%= r.id %>'
             onclick='javascript:logTask(<%= r.id %>);'><%= r.name %>
-            
+          <form>
+              <output>name= r.name + "time" for='duration'</output>
+          </form>  
         </button>
         
-        <script>
-        var timeOutput = document.createElement('duration').textContent;
         
-        </script>
 
         
         <br /><br />
