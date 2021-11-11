@@ -12,9 +12,10 @@
             onclick='javascript:logTask(<%= r.id %>);'><%= r.name %>
             
         </button>
+        <label>Time</label>
         <br />
     <% }); %>
-    <label>Time</label>    
+        
     <script>
         async = true;
     let currentTaskId = null;
