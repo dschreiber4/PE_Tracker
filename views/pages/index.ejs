@@ -9,9 +9,15 @@
     <% tasks.forEach(function(r) {%>
         <button id='<%= r.id %>'
             onclick='javascript:logTask(<%= r.id %>);'><%= r.name %>
+            console.log(result);
         </button>
-    <% }); %>
         
+    <% }); %>
+    <script>
+        const time = document.createElement("time");
+        time.setAttribute("type", "text");
+        document.body.appendChild(time);
+      </script>   
     <script>
         async = true;
     let currentTaskId = null;
