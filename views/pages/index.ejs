@@ -9,7 +9,6 @@
     <% tasks.forEach(function(r) {%>
         <button id='<%= r.id %>'
             onclick='javascript:logTask(<%= r.id %>);'><%= r.name %>
-            console.log(result);
         </button>
     <% }); %>
         
@@ -32,7 +31,7 @@
             })
         });
         const result = await response.text();
-        //console.log(result);
+        console.log(result);
         currentTaskId = id;
     };
     </script>
