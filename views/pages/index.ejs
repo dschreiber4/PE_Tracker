@@ -13,10 +13,11 @@
             </button>            
             <br /><br />
         
-        <output>
-            var durationTime = document.createElement('duration');   
+        <output id='<%= r.id %>
+            var durationTime = 'document.createElement(<%= r.duration %>);>'   
         </output>
         <br /><br />
+        
         <% }); %>
     </form>     
     <script>
