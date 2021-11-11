@@ -6,25 +6,24 @@
 </head>
 <body>
     <h1>PE Tracker</h1>
-    <form>
-    <% tasks.forEach(function(r) {%>
-        <button id='<%= r.id %>'
-            onclick='javascript:logTask(<%= r.id %>);'><%= r.name %>
-          <form>
-            <script>
-              <output id='<%= r.id %>'>
-                  
-                  var x = document.getElementById('duration').form.id;</output>
-                </script>
-          </form>  
-        </button>
-        
-        
+    <form id=obsForm>
+        <% tasks.forEach(function(r) {%>
+            <button id='<%= r.id %>'
+                onclick='javascript:logTask(<%= r.id %>);'><%= r.name %>
+            
+                
+            
+            </button>
+            
+            
 
-        
-        <br /><br />
-    <% }); %>
-        
+            
+            <br /><br />
+        <% }); %>
+        <output>
+            var durationTime = document.createElement("OUTPUT");   
+        </output>
+    </form>     
     <script>
         async = true;
     let currentTaskId = null;
