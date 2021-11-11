@@ -9,9 +9,9 @@
     <form>
     <% tasks.forEach(function(r) {%>
         <button id='<%= r.id %>'
-            onclick='javascript:logTask(<%= r.id %>);'><%= r.name %>
+            onclick='javascript:logTask(<%= r.id %>);'><%= r.name <br>%>
         </button>
-        <a>\n" "</a>
+        
     <% }); %>
     <label>Time</label>    
     <script>
