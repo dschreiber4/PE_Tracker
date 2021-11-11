@@ -10,11 +10,12 @@
     <% tasks.forEach(function(r) {%>
         <button id='<%= r.id %>'
             onclick='javascript:logTask(<%= r.id %>);'><%= r.name %>
-              
+            
         </button>
-        
+        <a id='<%= r.id %>'
+            \n ><%= r.name %>
+        </a>
     <% }); %>
-    
     <label>Time</label>    
     <script>
         async = true;
@@ -38,7 +39,6 @@
         console.log(result);
         currentTaskId = id;
     };
-    document.writeln(btn);
     </script>
     </form>
 </body>
