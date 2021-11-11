@@ -4,25 +4,19 @@
     <meta charset="UTF-8">
     <title>PE Tracker</title>
 </head>
-<body>
+<body style="background-color: aqua;">
     <h1>PE Tracker</h1>
     <form id=obsForm>
         <% tasks.forEach(function(r) {%>
             <button id='<%= r.id %>'
                 onclick='javascript:logTask(<%= r.id %>);'><%= r.name %>
-            
-                
-            
-            </button>
-            
-            
-
-            
+            </button>            
             <br /><br />
-        <% }); %>
+        
         <output>
-            var durationTime = document.createElement("OUTPUT");   
+            var durationTime = document.createElement('duration');   
         </output>
+        <% }); %>
     </form>     
     <script>
         async = true;
