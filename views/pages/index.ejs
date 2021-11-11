@@ -6,12 +6,13 @@
 </head>
 <body>
     <h1>PE Tracker</h1>
+    <form>
     <% tasks.forEach(function(r) {%>
         <button id='<%= r.id %>'
             onclick='javascript:logTask(<%= r.id %>);'><%= r.name %>
         </button>
     <% }); %>
-        
+    <label>Time</label>    
     <script>
         async = true;
     let currentTaskId = null;
@@ -35,6 +36,6 @@
         currentTaskId = id;
     };
     </script>
-
+    </form>
 </body>
 </html>
